@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .active{
+        background-color: #0E7A81;
+
+      }
+     
+    </style>
+</head>
+<body>
+    <header class="">
+        <nav class="w-11/12 mx-auto">
+            <div class="navbar  ">
+                <div class="navbar-start gap-1">
+                 <img src="images/logo.webp" alt="" srcset="">
+                  <p class="font-bold text-xl">Peddy</p>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li>
+                        <a>Home</a></li>
+                    <li>
+                        <a>Shop</a>
+                    </li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                 <img src="images/icons8-user-24.png" alt="" srcset="">
+                </div>
+              </div>
+        </nav>
+    </header>
+    <main class="w-11/12 mx-auto">
+        <!-- banner section -->
+         <section class="">
+            <div class="justify-center items-center gap-9 text-center">
+                <h4 class="font-semibold ">Bringing families together</h4>
+                <h1 class="text-5xl p-2 font-bold lg:w-6/12 w-9/12 mx-auto">Your Path to Adoption Start Here</h1>
+                <p class="w-7/12 mx-auto p-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <button class="btn bg-[#0E7A81] text-white">View More</button>
+                <img class="w-[500px] mx-auto" src="images/pet.webp" alt="" srcset="">
+            </div>
+         </section>
+         <section class="text-center items-center justify-center mt-5">
+            <h2 class="text-3xl font-bold p-2">Adopt Your Best Friend</h2>
+            <p class="w-7/12 font-semibold mx-auto ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+         </section>
+      <!-- button part -->
+         <section id="category_btn_pet" class=" flex gap-8 lg:justify-around mt-5 lg:p-9 rounded-xl "> 
+         </section>
+
+         <div class="flex items-center justify-between">
+            <p class="font-semibold text-2xl">Best Deal For you</p>
+            <button class="btn mt-4 bg-[#0E7A81] text-white ">Sort By Price</button>
+        
+           </div>
+
+           <!-- all pet category show section -->
+           <section class="flex gap-2">
+             <section id="all-pet-category" class=" mt-5 lg:w-[880px] w-[250px] flex grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            </section>
+              <section class="col-span-3 md:col-span-1 mt-5">
+                 <div id="likeBtn" class="card grid grid-cols-1 lg:grid-cols-2 lg:w-[300px] w-[150px] border gap-2 p-2">
+                  
+                 </div>
+              </section>
+           </section>
+            <!-- modal show section -->
+             <section>
+              <!-- Open the modal using ID.showModal() method -->
+      <button class="btn hidden" onclick="pet-modal.showModal()">open modal</button>
+         <dialog id="pet-modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+   <div id="modal-text">
+    
+   </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+             </section>
+
+    </main>
+    <script src="js/pet.js"></script>
+</body>
+</html>
