@@ -54,11 +54,11 @@ its layout. The point of using Lorem Ipsum is that it has a.</p>
    </div>
    <div class="flex gap-1">
        <img class="w-6 h-6" src="https://img.icons8.com/?size=100&id=uMIKdjc-Fwen&format=png"/>
-       <p class="text-[17px]"> Gender: ${pet.gender?pet.gender:"no gender"}</p>
+       <p class="text-[17px]"> Gender: ${pet.gender?pet.gender:"undefined"}</p>
    </div>
     <div class="flex gap-2 ">
         <img class="w-5 h-5" src="https://img.icons8.com/?size=96&id=AjX2De5JqXqG&format=png"/>
-        <p class="text-[17px]">Price: ${pet.price? pet.price + "$": "no price"}$</p>
+        <p class="text-[17px]">Price: ${pet.price? pet.price + "$": "not available"}</p>
     </div>
     <div class="divider"></div>
     <button class="btn btn-outline btn-success" onclick="likeBtnImageShow('${pet.image}','${pet.pet_name}')"><img class="w-5 h-5" src="https://img.icons8.com/?size=48&id=u8MTpAq972MG&format=png"/>
@@ -71,10 +71,10 @@ its layout. The point of using Lorem Ipsum is that it has a.</p>
   })
 }
 // sort by price 
-const sortByPrice=(pet)=>{
-const sorted=[...pet].sort((a,b)=>b.price-a.price)
-console.log(sorted);
-}
+// const sortByPrice=(pet)=>{
+// const sorted=[...pet].sort((a,b)=>b.price-a.price)
+// console.log(sorted);
+// }
 // like btn e image show
 const likeBtnImageShow=(image,petName)=>{
   const imageContainer= document.getElementById("likeBtn")
@@ -133,11 +133,11 @@ const displayPetDetails=(pet)=>{
    </div>
    <div class="flex gap-1">
        <img class="w-6 h-6" src="https://img.icons8.com/?size=100&id=uMIKdjc-Fwen&format=png"/>
-       <p class="text-[17px]"> Gender: ${pet.gender?pet.gender:"no gender"}</p>
+       <p class="text-[17px]"> Gender: ${pet.gender?pet.gender:"undefined"}</p>
    </div>
     <div class="flex gap-2 ">
         <img class="w-5 h-5" src="https://img.icons8.com/?size=96&id=AjX2De5JqXqG&format=png"/>
-        <p class="text-[17px]">Price: ${pet.price? pet.price + "$": "no price"}$</p>
+        <p class="text-[17px]">Price: ${pet.price? pet.price + "$": "not available"}</p>
     </div>
     <div class="divider"></div>
     <div>
