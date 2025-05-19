@@ -5,10 +5,17 @@ const loadAllPetCategory=()=>{
     .then(data =>displayAllPetCategory(data.pets))
     .catch(error=>console.log(error))
 }
-// creat display all pet  ctegory
+// creat display all pet  category
 const  displayAllPetCategory=(pets)=>{
   console.log(pets)
   const petContainer=document.getElementById("all-pet-category")
+  const spinner=document.getElementById("spinner");
+  spinner.classList.remove("hidden")
+  petContainer.classList.add("hidden")
+  setTimeout(() => {
+    spinner.classList.add("hidden")
+    petContainer.classList.remove("hidden")
+  }, 2000);
   petContainer.innerHTML="";
  if(pets.length==0){
   petContainer.classList.remove("grid")
@@ -24,7 +31,6 @@ its layout. The point of using Lorem Ipsum is that it has a.</p>
  else{
   petContainer.classList.add("grid")
  }
-
   pets.forEach(pet=>{
     const card = document.createElement("div")
     card.classList="card"
@@ -57,23 +63,44 @@ its layout. The point of using Lorem Ipsum is that it has a.</p>
     <div class="divider"></div>
     <button class="btn btn-outline btn-success" onclick="likeBtnImageShow('${pet.image}','${pet.pet_name}')"><img class="w-5 h-5" src="https://img.icons8.com/?size=48&id=u8MTpAq972MG&format=png"/>
     </button>
-    <button class="btn btn-outline lg:ml-4 text-black btn-success">Adopt</button>
+    <button class="btn btn-outline lg:ml-4 text-black btn-success" onclick="countDown()">Adopt</button>
     <button class="btn btn-outline  text-black lg:ml-5 btn-success" onclick="petCategoryDetails('${pet.petId}')" >Details</button>
 </div>
     `;
     petContainer.appendChild(card)
   })
 }
+// sort by price 
+const sortByPrice=(pet)=>{
+const sorted=[...pet].sort((a,b)=>b.price-a.price)
+console.log(sorted);
+}
 // like btn e image show
 const likeBtnImageShow=(image,petName)=>{
   const imageContainer= document.getElementById("likeBtn")
-  const img= document.createElement("img")
+  const img= document.createElement("img");
   img.classList="rounded-xl";
   img.src=image;
   img.alt=petName;
   imageContainer.append(img)
 }
+// adopt btn e countdown modal show
+const countDown=()=>{
+   const counterModal=document.getElementById("count-modal")
+   counterModal.showModal();
+   const counterNumber=document.getElementById("counter-number");
+   let count=3;
+   counterNumber.innerText=count;
+   const showCountDown=setInterval(()=>{
+    count--;
+    counterNumber.innerText=count;
+    if(count===1){
+     clearInterval(showCountDown);
+     counterModal.close();
+    }
 
+   },2000)
+}
 // pet er details section 
 const petCategoryDetails=(id)=>{
  
